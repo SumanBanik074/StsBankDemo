@@ -1,0 +1,167 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<title>STS Bank&reg; SignUp Page</title>
+  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ 		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<style>
+		header{
+			background-color: #6D0026;
+			padding: 15px;
+		}
+		footer{
+			background-color: #6D0026;
+			padding: 15px;
+		}
+		.p1{
+            background-color: white;		
+		}
+		 .p2 {
+            background-color: #6D0026;  
+		 }
+		  
+	</style>
+	<script>
+		function validate(){
+		 
+		 var x= document.sgu.cusnum;
+		 var y=document.sgu.psw;
+		 var z=document.sgu.rpsw;
+		 var m=document.sgu.pan_no;
+		 var n=document.sgu.adh_no;
+		 var o=document.sgu.addr;
+		 var p=document.sgu.phno;
+		 var q=document.sgu.amt;
+		 
+			if(x.value==""){
+				alert("enter customer name");
+				x.focus();
+				return false;
+			}
+			else if(y.value==""){
+				alert("enter your password");
+				y.focus();
+				return false;
+			}
+			else if(!(y.value.length==8)){
+				alert("password must be greater than 8 char");
+				y.select();
+				y.focus();
+				return false;
+			}
+			else if(z.value==""){
+				alert("ReEnter Password");
+				z.focus();
+				return false;
+			}
+			else if(y.value!=z.value){
+				alert("Re-Enter password");
+				z.focus();
+				return false;
+			}
+			else if(m.value==""){
+              alert("Enter your pan-no");
+			  m.focus();
+			  return false;
+			}
+			else if(!(m.value.length==10)){
+				alert("Pan no must be 10-digit");
+				m.focus();
+				m.select();
+				return false;
+			}
+			else if(n.value==""){
+				alert("Enter Aadhar no");
+				 n.focus();
+				 return false;
+			}
+			else if(!(n.value.length==10)){
+				alert("Adhar no must be 10-digit");
+				n.focus();
+				n.select();
+				return false;
+			}
+			else if(o.value==""){
+			   alert("Address field must not be empty");
+			    o.focus();
+			    o.select();
+			    return false;
+			}
+			else if(p.value==""){
+				alert("Enter Phone number");
+				p.select();
+				p.focus();
+				return false;
+			}
+			else if(isNaN(p.value)){
+				alert("phone no must be numeric");
+				p.select();
+				p.focus();
+				return false;
+			}
+			else if(!(p.value.length==10)){
+				alert("phone number must be 10 digit");
+				p.select();
+				p.focus();
+				return false;
+			}
+			else if(q.value==""){
+				alert("Enter your amount");
+				 q.focus();
+				 return false;
+			}
+			else if(q.value<200){
+				alert("Amount must be atleast 200");
+				q.focus();
+				q.select();
+				return false;
+			}
+	}	
+	</script>
+  	</head>
+   	<body>
+		<header>
+		<table>
+			<tr><td>
+					<img src="STS Bank.png" height="100" width="100">
+				</td><td>
+					<h1 style="color: white;">&nbsp;&nbsp;STS Bank</h1>
+					<i style="color: white;padding: 15px; font-family:monospace;">The bank for a changing world.....</i>
+			</td></tr>
+		</table>
+	</header>
+	<div style="background-color: #ffe5cc" class="row">
+	<br>
+	<div class="col-md-3"></div>
+	<div class="container well col-md-6">
+   		<form action="insert" name="sgu" method="post" onsubmit="return validate()">
+   	 		<table align="center" class="table table-bordered">
+          		<tr><th colspan="2" style="text-align:center; class="contain" class="p2"><h1 style="color: white;"> Open Account</h1></th></tr>
+          		<tr><td colspan="2"></td></tr>
+          		<tr><td><h4>Customer Name </h4></td><td><input type="text" name="cusnum" class="form-control" placeholder="Enter Name"></td></tr>
+          		<tr><td><h4>Password</h4></td><td><input type="password" name="psw" class="form-control"placeholder="Enter password"></td></tr>
+         		<tr><td><h4>Re-enter Password</h4></td><td><input type="password" name="rpsw" class="form-control"placeholder="Re-Enter password"></td></tr>
+       			<tr><td><h4>Enter PAN-NO</h4></td><td><input type="text" name="pan_no" class="form-control"placeholder="Enter pan-no"></td></tr>
+         		<tr><td><h4>Enter Aadhar-no</h4></td><td><input type="text" name="adh_no" class="form-control"placeholder="Enter Aadhar no"></td></tr>
+        	 	<tr><td><h4>Account-type</h4></td>
+        	 		<td><select class="form-control" name="acc_type">
+        	    		<option class="form-control" value="Savings Account">Savings Account</option>
+        	 			<option class="form-control" value="Current Account">Current Account</option>
+					</select></td></tr>
+    			<tr><td><h4>Address</h4></td><td><textarea name="addr" class="form-control" placeholder="Enter your Address" ></textarea></td></tr>
+    			<tr><td><h4>Phone-no</h4></td><td><input type="text" name="phno" class="form-control" placeholder="Enter your phone-no"></td></tr>
+				<tr><td><h4>Amount</h4></td><td><input type="text" name="amt" class="form-control" placeholder="Enter your Amount"></td></tr>
+				<tr><td colspan="2" class="text-center"><button type="submit" class="btn btn-success btn-lg">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<button type="reset" class="btn btn-danger btn-lg">Clear</button></td>
+				</tr>
+			</table>
+		</form>
+		</div>
+	</div>
+	<footer>
+		<p	style="color: white; text-align: center;">Copyright&copy; 2017 STS Bank. All Rights Reserved</p>
+	</footer>
+</body>
+</html>
