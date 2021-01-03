@@ -1,2 +1,2 @@
-# stsBank
- it is a demo project for practice web development.
+# StsBankDemo
+ It is a demo project for practicing web development.
